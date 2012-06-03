@@ -1,23 +1,10 @@
-﻿using System;
-using AwesomeSauce.Configuration.Actions;
+﻿using AwesomeSauce.Configuration.Actions;
 using AwesomeSauce.Configuration.Routing;
-using AwesomeSauce.Domain;
-using FubuCore;
 using FubuMVC.Core;
 
 namespace AwesomeSauce.Configuration
 {
-    public static class AwesomeConfiguration
-    {
-        static AwesomeConfiguration()
-        {
-            AwesomeEntities = t => t.CanBeCastTo<AwesomeEntity>();
-        }
-
-        public static Func<Type, bool> AwesomeEntities { get; set; }
-    }
-
-    public class AwesomeSauce : IFubuRegistryExtension
+    public class MeSomeAwesome : IFubuRegistryExtension
     {
         public void Configure(FubuRegistry registry)
         {
@@ -34,19 +21,8 @@ namespace AwesomeSauce.Configuration
                 .UrlPolicy<RestfulFindRoutingConvention>();
 
             registry.Output.ToJson.WhenCallMatches(x => x.HandlerType.IsGenericType);
-        }
-    }
 
-    public static class AwesomeSauceExtensions
-    {
-        public static AwesomeSauceExpression AwesomeSauce()
-        {
-            return new AwesomeSauceExpression();
+            registry.HtmlConvention<AwesomeHtmlConventions>();
         }
-    }
-
-    public class AwesomeSauceExpression
-    {
-        
     }
 }

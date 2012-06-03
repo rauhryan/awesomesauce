@@ -69,6 +69,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,7 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Actions\RestfulHandlerActionSource.cs" />
-    <Compile Include="Configuration\AwesomeSauce.cs" />
+    <Compile Include="Configuration\AwesomeConfiguration.cs" />
+    <Compile Include="Configuration\AwesomeHtmlConventions.cs" />
+    <Compile Include="Configuration\MeSomeAwesome.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulDeleteRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulFindRoutingConvention.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Configuration\Storage\MongoSettings.cs" />
     <Compile Include="Configuration\Storage\StorageRegistry.cs" />
     <Compile Include="Domain\AwesomeEntity.cs" />
+    <Compile Include="Handlers\Class1.cs" />
     <Compile Include="Handlers\IRequestById.cs" />
     <Compile Include="Handlers\RestfulCreateHandler.cs" />
     <Compile Include="Handlers\RestfulDeleteHandler.cs" />

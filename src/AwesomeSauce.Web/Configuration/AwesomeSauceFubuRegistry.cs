@@ -1,5 +1,8 @@
-﻿using FubuMVC.Core;
+﻿using AwesomeSauce.Configuration;
+using AwesomeSauce.Domain;
+using FubuMVC.Core;
 using FubuMVC.Spark;
+using FubuCore;
 
 namespace AwesomeSauce.Web.Configuration
 {
@@ -17,7 +20,11 @@ namespace AwesomeSauce.Web.Configuration
                 .TryToAttachWithDefaultConventions()
                 .TryToAttachViewsInPackages();
 
-            Import<AwesomeSauce.Configuration.AwesomeSauce>();
+
+            //awesome config - we have defaults for all of this
+            AwesomeConfiguration.AwesomeEntities = t => t.CanBeCastTo<AwesomeEntity>();
+
+            Import<MeSomeAwesome>();
         }
     }
 }
