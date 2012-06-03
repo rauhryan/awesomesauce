@@ -20,8 +20,7 @@ namespace AwesomeSauce.Handlers
        public T Entity { get; set; }
    }
 
-    public class AwesomeEditRequest<T> 
-    public class AwesomeEditRequest
+  
     public class AwesomeEditRequest<T> : IRequestById
     {
         public string Id { get; set; }
