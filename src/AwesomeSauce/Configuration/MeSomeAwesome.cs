@@ -6,16 +6,13 @@ using FubuMVC.Core;
 
 namespace AwesomeSauce.Configuration
 {
-    public class MeSomeAwesome : FubuPackageRegistry
+    public class MeSomeAwesome : IFubuRegistryExtension
     {
-        public MeSomeAwesome()
-        {
-            Configure(this);
-        }
-
         public void Configure(FubuRegistry registry)
         {
-            registry.Applies.ToThisAssembly();
+            registry.Applies
+                .ToAllPackageAssemblies()
+                .ToThisAssembly();
 
             registry.Actions
                 .FindWith<RestfulHandlerActionSource>();
