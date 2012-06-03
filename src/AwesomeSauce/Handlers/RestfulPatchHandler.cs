@@ -12,7 +12,7 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulPatchModel<TEntity> Patch(RestfulPatchRequest<TEntity> request)
+        public RestfulPatchModel<TEntity> Execute(RestfulPatchRequest<TEntity> request)
         {
             var collection = _session.GetCollection<TEntity>();
 

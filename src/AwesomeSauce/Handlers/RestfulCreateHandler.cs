@@ -2,7 +2,8 @@
 
 namespace AwesomeSauce.Handlers
 {
-    public class RestfulCreateHandler<TEntity> 
+    public class RestfulCreateHandler<TEntity>
+        where TEntity : class
     {
         private readonly MongoSession _session;
 
@@ -11,7 +12,7 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulCreateModel<TEntity> Post(RestfulCreateRequest<TEntity> request)
+        public RestfulCreateModel<TEntity> Execute(RestfulCreateRequest<TEntity> request)
         {
             var collection = _session.GetCollection<TEntity>();
             collection.Save(request.Model);
@@ -21,12 +22,12 @@ namespace AwesomeSauce.Handlers
          
     }
 
-    public class RestfulCreateRequest<T>
+    public class RestfulCreateRequest<TEntity> where TEntity : class
     {
-        public T Model { get; set; }
+        public TEntity Model { get; set; }
     }
 
-    public class RestfulCreateModel<T>
+    public class RestfulCreateModel<TEntity> where TEntity : class
     {
         public bool success { get; set; }
     }

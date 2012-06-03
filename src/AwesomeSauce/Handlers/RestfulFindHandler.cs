@@ -13,7 +13,7 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulFindModel<TEntity> Get(RestfulFindRequest<TEntity> request)
+        public RestfulFindModel<TEntity> Execute(RestfulFindRequest<TEntity> request)
         {
             var collection = _session.Session.GetCollection<TEntity>(typeof (TEntity).Name.ToLowerInvariant());
             BsonValue id = new BsonObjectId(request.Id);

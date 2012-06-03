@@ -76,11 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Actions\RestfulCreateHandlerActionSource.cs" />
-    <Compile Include="Configuration\Actions\RestfulDeleteHandlerActionSource.cs" />
-    <Compile Include="Configuration\Actions\RestfulFindHandlerActionSource.cs" />
-    <Compile Include="Configuration\Actions\RestfulIndexHandlerActionSource.cs" />
-    <Compile Include="Configuration\Actions\RestfulPatchHandlerActionSource.cs" />
+    <Compile Include="Configuration\Actions\RestfulHandlerActionSource.cs" />
     <Compile Include="Configuration\AwesomeSauce.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulDeleteRoutingConvention.cs" />

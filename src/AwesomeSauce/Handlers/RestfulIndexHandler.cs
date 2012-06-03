@@ -14,7 +14,7 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulIndexModel<TEntity> Get(RestfulIndexRequest<TEntity> request)
+        public RestfulIndexModel<TEntity> Execute(RestfulIndexRequest<TEntity> request)
         {
             var collection = _session.GetCollection<TEntity>();
 

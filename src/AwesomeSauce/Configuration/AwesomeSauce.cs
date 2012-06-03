@@ -1,9 +1,22 @@
-﻿using AwesomeSauce.Configuration.Actions;
+﻿using System;
+using AwesomeSauce.Configuration.Actions;
 using AwesomeSauce.Configuration.Routing;
+using AwesomeSauce.Domain;
+using FubuCore;
 using FubuMVC.Core;
 
 namespace AwesomeSauce.Configuration
 {
+    public static class AwesomeConfiguration
+    {
+        static AwesomeConfiguration()
+        {
+            AwesomeEntities = t => t.CanBeCastTo<AwesomeEntity>();
+        }
+
+        public static Func<Type, bool> AwesomeEntities { get; set; }
+    }
+
     public class AwesomeSauce : IFubuRegistryExtension
     {
         public void Configure(FubuRegistry registry)
@@ -11,11 +24,7 @@ namespace AwesomeSauce.Configuration
             registry.Applies.ToThisAssembly();
 
             registry.Actions
-                .FindWith<RestfulCreateHandlerActionSource>()
-                .FindWith<RestfulDeleteHandlerActionSource>()
-                .FindWith<RestfulIndexHandlerActionSource>()
-                .FindWith<RestfulPatchHandlerActionSource>()
-                .FindWith<RestfulFindHandlerActionSource>();
+                .FindWith<RestfulHandlerActionSource>();
 
             registry.Routes
                 .UrlPolicy<RestfulCreateRoutingConvention>()

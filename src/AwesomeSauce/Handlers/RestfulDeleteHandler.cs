@@ -13,7 +13,7 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulDeleteModel<TEntity> Delete(RestfulDeleteRequest<TEntity> request)
+        public RestfulDeleteModel<TEntity> Execute(RestfulDeleteRequest<TEntity> request)
         {
             var collection = _session.Session.GetCollection<TEntity>(typeof (TEntity).Name.ToLowerInvariant());
             BsonValue id = new BsonObjectId(request.Id);
