@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Shared\Application.spark" />
+    <None Include="Views\Blogs.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

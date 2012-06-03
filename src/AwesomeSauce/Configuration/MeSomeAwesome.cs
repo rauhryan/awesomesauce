@@ -1,6 +1,7 @@
 ﻿using AwesomeSauce.Configuration.Actions;
 using AwesomeSauce.Configuration.Html;
 using AwesomeSauce.Configuration.Routing;
+using AwesomeSauce.Configuration.Views;
 using FubuMVC.Core;
 
 namespace AwesomeSauce.Configuration
@@ -22,6 +23,11 @@ namespace AwesomeSauce.Configuration
                 .UrlPolicy<RestfulFindRoutingConvention>();
 
             registry.Output.ToJson.WhenCallMatches(x => x.HandlerType.IsGenericType);
+
+            registry.Views
+                .TryToAttachWithDefaultConventions()
+                .TryToAttachViewsInPackages()
+                .ApplyConvention<CreateViewPolicy>();
 
             registry.HtmlConvention<AwesomeHtmlConventions>();
         }

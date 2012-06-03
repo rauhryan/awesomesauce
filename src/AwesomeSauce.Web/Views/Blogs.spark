@@ -1,0 +1,9 @@
+﻿<viewdata model="AwesomeSauce.Handlers.RestfulIndexModel[[AwesomeSauce.Web.Domain.Blog]]" />
+<ul>
+  <for each="var blog in Model.Models">
+    <li>
+      <a href="${this.Urls.UrlFor(new AwesomeSauce.Handlers.RestfulFindRequest[[AwesomeSauce.Web.Domain.Blog]](){Id = blog.Id.ToString()})}">
+        ${ blog.Title }
+      </a></li>
+  </for>
+</ul>

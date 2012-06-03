@@ -90,8 +90,11 @@
     <Compile Include="Configuration\Storage\MongoSession.cs" />
     <Compile Include="Configuration\Storage\MongoSettings.cs" />
     <Compile Include="Configuration\Storage\StorageRegistry.cs" />
+    <Compile Include="Configuration\Views\CreateViewPolicy.cs" />
     <Compile Include="Domain\AwesomeEntity.cs" />
     <Compile Include="Handlers\AwesomeFubuPageExtensions.cs" />
+    <Compile Include="Handlers\Class1.cs" />
+    <Compile Include="Handlers\AwesomeEditHandler.cs" />
     <Compile Include="Handlers\IRequestById.cs" />
     <Compile Include="Handlers\RestfulCreateHandler.cs" />
     <Compile Include="Handlers\RestfulDeleteHandler.cs" />
@@ -100,9 +103,11 @@
     <Compile Include="Handlers\RestfulPatchHandler.cs" />
     <Compile Include="MongoExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AwesomeEditModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <EmbeddedResource Include="Views\AwesomeEditView.spark" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

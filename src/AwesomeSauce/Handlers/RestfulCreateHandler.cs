@@ -2,8 +2,7 @@
 
 namespace AwesomeSauce.Handlers
 {
-    public class RestfulCreateHandler<TEntity>
-        where TEntity : class
+    public class RestfulCreateHandler<TEntity> where TEntity : new()
     {
         private readonly MongoSession _session;
 
@@ -22,9 +21,13 @@ namespace AwesomeSauce.Handlers
          
     }
 
-    public class RestfulCreateRequest<TEntity> where TEntity : class
+    public class RestfulCreateRequest<T> where T : new()
     {
-        public TEntity Model { get; set; }
+        public RestfulCreateRequest()
+        {
+            Model = new T();
+        }
+        public T Model { get; set; }
     }
 
     public class RestfulCreateModel<TEntity> where TEntity : class
