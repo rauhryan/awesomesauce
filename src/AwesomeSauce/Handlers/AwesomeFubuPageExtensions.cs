@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Text;
 using AwesomeSauce.Configuration;
+using AwesomeSauce.Views;
 using FubuCore;
 using FubuCore.Reflection;
 using FubuMVC.Core.UI.Configuration;
@@ -15,32 +17,37 @@ namespace FubuMVC.Core.UI
     public static class AwesomeFubuPageExtensions
     {
         //returning a string is DUMB
-        public static string AwesomeFields<TEntity>(this IFubuPage page, TEntity model) where TEntity : class
+        public static string AwesomeFields(this IFubuPage page, object model)
         {
+            var type = model.GetType();
             var result = new StringBuilder();
-            var tags = page.Get<ITagGenerator<TEntity>>();
+            var tags = page.Get<ITagGenerator<AwesomeEditModel>>();
             var sl = page.Get<IServiceLocator>();
 
             tags.SetProfile(AwesomeConfiguration.TagProfile);
 
-            foreach(var prop in getProperties<TEntity>())
+            foreach(var prop in getProperties(type))
             {
-                var p = new SingleProperty(prop, typeof (TEntity));
+                var p = new SingleProperty(prop, type);
                 var elementRequest = new ElementRequest(model, p, sl);
                 var accessRight = page.Get<IFieldAccessService>().RightsFor(elementRequest);
             
-                var line = new FormLineExpression<TEntity>(tags, tags.NewFieldLayout(), elementRequest).Access(accessRight).Editable(true);
-
-
+                var line = new FormLineExpression<AwesomeEditModel>(tags, tags.NewFieldLayout(), elementRequest)
+                    .Access(accessRight)
+                    .Editable(true);
                 result.Append(line.ToString());
+
+//                result.Append(tags.LabelFor(elementRequest));
+//                result.Append(tags.InputFor(elementRequest));
+
             }
 
             return result.ToString();
         }
 
-        static PropertyInfo[] getProperties<T>()
+        static PropertyInfo[] getProperties(Type type)
         {
-            return typeof (T).GetProperties();
+            return type.GetProperties();
         }
     }
 }

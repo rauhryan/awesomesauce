@@ -1,19 +1,18 @@
-﻿using AwesomeSauce.Domain;
-using AwesomeSauce.Views;
+﻿using AwesomeSauce.Views;
 
 namespace AwesomeSauce.Handlers
 {
-    public class AwesomeEditHandler<T> where T : AwesomeEntity 
+    public class AwesomeEditHandler<TEntity> where TEntity : class 
     {
-         public AwesomeEditModel Execute(T request)
+         public AwesomeEditModel Execute(TEntity request)
          {
-             return new AwesomeEditModel(){Entity = request};
+             return new AwesomeEditModel{Entity = request};
          }
     }
 
    
 
-    public class AwesomeEditRequest<T> 
+    public class AwesomeEditRequest
     {
     }
 }

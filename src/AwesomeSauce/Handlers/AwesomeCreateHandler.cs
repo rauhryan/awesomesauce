@@ -3,7 +3,7 @@ using AwesomeSauce.Views;
 
 namespace AwesomeSauce.Handlers
 {
-    public class AwesomeCreateHandler<TEntity> where TEntity : AwesomeEntity, new()
+    public class AwesomeCreateHandler<TEntity> where TEntity : class, new()
     {
         public AwesomeCreateModel<TEntity> Execute()
         {

@@ -1,10 +1,8 @@
-﻿using AwesomeSauce.Domain;
-
-namespace AwesomeSauce.Views
+﻿namespace AwesomeSauce.Views
 {
     public class AwesomeEditModel
     {
-        public AwesomeEntity Entity { get; set; } 
+        public object Entity { get; set; } 
     }
 
     
