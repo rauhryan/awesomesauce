@@ -1,0 +1,9 @@
+*.user
+*.suo
+*.cache
+~$*
+*.DotSettings.user
+_Resharper.*
+obj
+bin
+packages
