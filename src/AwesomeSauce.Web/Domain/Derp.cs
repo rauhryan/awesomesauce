@@ -1,5 +1,4 @@
-﻿using AwesomeSauce.Domain;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 
 namespace AwesomeSauce.Web.Domain
 {

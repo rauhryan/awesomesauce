@@ -14,20 +14,16 @@ namespace AwesomeSauce.Handlers
         public RestfulCreateModel<TEntity> Execute(RestfulCreateRequest<TEntity> request)
         {
             var collection = _session.GetCollection<TEntity>();
-            collection.Save(request.Model);
+            collection.Save(request.Entity);
 
-            return new RestfulCreateModel<TEntity>();
+            return new RestfulCreateModel<TEntity>(){success = true};
         }
          
     }
 
     public class RestfulCreateRequest<T> where T : new()
     {
-        public RestfulCreateRequest()
-        {
-            Model = new T();
-        }
-        public T Model { get; set; }
+        public T Entity { get; set; }
     }
 
     public class RestfulCreateModel<TEntity> where TEntity : class

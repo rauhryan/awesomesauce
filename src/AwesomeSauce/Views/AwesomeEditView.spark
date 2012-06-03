@@ -3,4 +3,5 @@
 
 <form method="POST" action="${this.CreateUrlFor(Model.Entity)}" >
   !{this.AwesomeFields(Model.Entity)}
+  <input type="submit" value="Save" />
 </form>

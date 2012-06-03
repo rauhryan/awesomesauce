@@ -19,7 +19,7 @@ namespace FubuMVC.Core.UI
     {
         public static string CreateUrlFor(this IFubuPage page, object model)
         {
-            var input = typeof (AwesomeCreateHandler<>).MakeGenericType(model.GetType());
+            var input = typeof(RestfulCreateHandler<>).MakeGenericType(model.GetType());
             return page.Urls.UrlFor(input);
         }
 
