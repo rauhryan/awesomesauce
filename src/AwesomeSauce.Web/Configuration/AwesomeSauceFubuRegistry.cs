@@ -1,5 +1,5 @@
 ﻿using AwesomeSauce.Configuration;
-using AwesomeSauce.Domain;
+using AwesomeSauce.Web.Domain;
 using FubuMVC.Core;
 using FubuMVC.Spark;
 using FubuCore;

@@ -1,6 +1,6 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 
-namespace AwesomeSauce.Domain
+namespace AwesomeSauce.Web.Domain
 {
     public interface AwesomeEntity
     {

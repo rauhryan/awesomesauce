@@ -92,7 +92,6 @@
     <Compile Include="Configuration\Storage\MongoSettings.cs" />
     <Compile Include="Configuration\Storage\StorageRegistry.cs" />
     <Compile Include="Configuration\Views\CreateViewPolicy.cs" />
-    <Compile Include="Domain\AwesomeEntity.cs" />
     <Compile Include="Handlers\AwesomeCreateHandler.cs" />
     <Compile Include="Handlers\AwesomeFubuPageExtensions.cs" />
     <Compile Include="Handlers\AwesomeEditHandler.cs" />

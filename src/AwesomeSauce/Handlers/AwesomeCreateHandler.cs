@@ -1,4 +1,3 @@
-using AwesomeSauce.Domain;
 using AwesomeSauce.Views;
 
 namespace AwesomeSauce.Handlers

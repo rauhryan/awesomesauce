@@ -36,10 +36,6 @@ namespace FubuMVC.Core.UI
                     .Access(accessRight)
                     .Editable(true);
                 result.Append(line.ToString());
-
-//                result.Append(tags.LabelFor(elementRequest));
-//                result.Append(tags.InputFor(elementRequest));
-
             }
 
             return result.ToString();

@@ -1,5 +1,4 @@
 using System;
-using AwesomeSauce.Domain;
 using FubuCore;
 
 namespace AwesomeSauce.Configuration
@@ -8,7 +7,7 @@ namespace AwesomeSauce.Configuration
     {
         static AwesomeConfiguration()
         {
-            AwesomeEntities = t => t.CanBeCastTo<AwesomeEntity>();
+            AwesomeEntities = t => t.Namespace.Contains("Domain");
             TagProfile = "AWESOME";
         }
 
