@@ -9,7 +9,6 @@ namespace AwesomeSauce.Configuration.Routing
 {
     public class RestfulCreateRoutingConvention : IUrlPolicy
     {
-
         public bool Matches(ActionCall call, IConfigurationObserver log)
         {
             return call.HandlerType.Closes(typeof(RestfulCreateHandler<>));

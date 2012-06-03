@@ -1,10 +1,11 @@
 ﻿using AwesomeSauce.Configuration.Actions;
+using AwesomeSauce.Configuration.Html;
 using AwesomeSauce.Configuration.Routing;
 using FubuMVC.Core;
 
 namespace AwesomeSauce.Configuration
 {
-    public class MeSomeAwesome : IFubuRegistryExtension
+    public class MeSomeAwesome : FubuPackageRegistry
     {
         public void Configure(FubuRegistry registry)
         {

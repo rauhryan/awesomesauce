@@ -2,7 +2,7 @@ using FubuMVC.Core.UI;
 using FubuMVC.Core.UI.Configuration;
 using HtmlTags;
 
-namespace AwesomeSauce.Configuration
+namespace AwesomeSauce.Configuration.Html
 {
     public class AwesomeHtmlConventions : HtmlConventionRegistry
     {
@@ -10,6 +10,7 @@ namespace AwesomeSauce.Configuration
         {
             Profile(AwesomeConfiguration.TagProfile, tags =>
             {
+                tags.UseLabelAndFieldLayout<AwesomeFieldLayout>();
                 tags.Editors.If(a => AwesomeConfiguration.AwesomeEntities(a.ModelType))
                     .BuildBy(BuildTypeAheadEntityFinder);
             });

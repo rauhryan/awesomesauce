@@ -79,7 +79,8 @@
   <ItemGroup>
     <Compile Include="Configuration\Actions\RestfulHandlerActionSource.cs" />
     <Compile Include="Configuration\AwesomeConfiguration.cs" />
-    <Compile Include="Configuration\AwesomeHtmlConventions.cs" />
+    <Compile Include="Configuration\Html\AwesomeFieldLayout.cs" />
+    <Compile Include="Configuration\Html\AwesomeHtmlConventions.cs" />
     <Compile Include="Configuration\MeSomeAwesome.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulDeleteRoutingConvention.cs" />
@@ -90,7 +91,7 @@
     <Compile Include="Configuration\Storage\MongoSettings.cs" />
     <Compile Include="Configuration\Storage\StorageRegistry.cs" />
     <Compile Include="Domain\AwesomeEntity.cs" />
-    <Compile Include="Handlers\Class1.cs" />
+    <Compile Include="Handlers\AwesomeFubuPageExtensions.cs" />
     <Compile Include="Handlers\IRequestById.cs" />
     <Compile Include="Handlers\RestfulCreateHandler.cs" />
     <Compile Include="Handlers\RestfulDeleteHandler.cs" />

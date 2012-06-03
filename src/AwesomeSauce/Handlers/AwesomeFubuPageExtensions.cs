@@ -9,7 +9,7 @@ using HtmlTags;
 
 namespace AwesomeSauce.Handlers
 {
-    public static class Class1
+    public static class AwesomeFubuPageExtensions
     {
         public static HtmlTag AwesomeFields<TEntity>(this IFubuPage page, TEntity model)
         {
@@ -25,6 +25,8 @@ namespace AwesomeSauce.Handlers
                 var p = new SingleProperty(prop, typeof (TEntity));
                 var elementRequest = new ElementRequest(model, p, sl);
 
+            //this should be moved into label / field layout method call
+                //ie Edit(__);
                 var label = tagGenerator.LabelFor(elementRequest);
                 var input = tagGenerator.InputFor(elementRequest);
 
