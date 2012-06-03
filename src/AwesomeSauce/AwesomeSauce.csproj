@@ -80,6 +80,7 @@
     <Compile Include="Configuration\Actions\RestfulDeleteHandlerActionSource.cs" />
     <Compile Include="Configuration\Actions\RestfulFindHandlerActionSource.cs" />
     <Compile Include="Configuration\Actions\RestfulIndexHandlerActionSource.cs" />
+    <Compile Include="Configuration\Actions\RestfulUpdateHandlerActionSource.cs" />
     <Compile Include="Configuration\AwesomeSauce.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulDeleteRoutingConvention.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Handlers\RestfulDeleteHandler.cs" />
     <Compile Include="Handlers\RestfulFindHandler.cs" />
     <Compile Include="Handlers\RestfulIndexHandler.cs" />
+    <Compile Include="Handlers\RestfulPatchHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
