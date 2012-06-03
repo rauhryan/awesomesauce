@@ -14,12 +14,14 @@ namespace AwesomeSauce.Configuration
                 .FindWith<RestfulCreateHandlerActionSource>()
                 .FindWith<RestfulDeleteHandlerActionSource>()
                 .FindWith<RestfulIndexHandlerActionSource>()
+                .FindWith<RestfulPatchHandlerActionSource>()
                 .FindWith<RestfulFindHandlerActionSource>();
 
             registry.Routes
                 .UrlPolicy<RestfulCreateRoutingConvention>()
                 .UrlPolicy<RestfulDeleteRoutingConvention>()
                 .UrlPolicy<RestfulIndexRoutingConvention>()
+                .UrlPolicy<RestfulPatchRoutingConvention>()
                 .UrlPolicy<RestfulFindRoutingConvention>();
 
             registry.Output.ToJson.WhenCallMatches(x => x.HandlerType.IsGenericType);

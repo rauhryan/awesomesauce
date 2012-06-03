@@ -9,7 +9,7 @@ using FubuMVC.Core.Registration.Nodes;
 
 namespace AwesomeSauce.Configuration.Actions
 {
-    public class RestfulUpdateHandlerActionSource
+    public class RestfulPatchHandlerActionSource : IActionSource
     {
         private static readonly string _methodName =
             ReflectionHelper.GetMethod<RestfulPatchHandler<string>>(x => x.Patch(null)).Name;

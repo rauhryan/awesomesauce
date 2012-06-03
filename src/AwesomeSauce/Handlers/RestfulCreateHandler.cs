@@ -13,7 +13,7 @@ namespace AwesomeSauce.Handlers
 
         public RestfulCreateModel<TEntity> Post(RestfulCreateRequest<TEntity> request)
         {
-            var collection = _session.Session.GetCollection<TEntity>(typeof(TEntity).Name.ToLowerInvariant());
+            var collection = _session.GetCollection<TEntity>();
             collection.Save(request.Model);
 
             return new RestfulCreateModel<TEntity>();
