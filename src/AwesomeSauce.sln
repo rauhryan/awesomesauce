@@ -6,9 +6,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwesomeSauce", "AwesomeSauce\AwesomeSauce.csproj", "{49CD4CB7-A71D-4F95-90D5-E826DD06F8F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{540739EA-D492-4DA4-8759-B4D52B17A5C8}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
