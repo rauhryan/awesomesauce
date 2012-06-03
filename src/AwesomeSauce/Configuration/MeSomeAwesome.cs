@@ -3,10 +3,11 @@ using AwesomeSauce.Configuration.Html;
 using AwesomeSauce.Configuration.Routing;
 using AwesomeSauce.Configuration.Views;
 using FubuMVC.Core;
+using FubuMVC.Spark;
 
 namespace AwesomeSauce.Configuration
 {
-    public class MeSomeAwesome : IFubuRegistryExtension
+    public class MeSomeAwesome : FubuPackageRegistry, IFubuRegistryExtension
     {
         public void Configure(FubuRegistry registry)
         {
@@ -27,6 +28,7 @@ namespace AwesomeSauce.Configuration
 
             registry.Output.ToJson.WhenCallMatches(x => x.HandlerType.IsGenericType);
 
+            registry.UseSpark();
 
             registry.Views
                 .TryToAttachWithDefaultConventions()
@@ -34,6 +36,8 @@ namespace AwesomeSauce.Configuration
                 .ApplyConvention<CreateViewPolicy>();
 
             registry.HtmlConvention<AwesomeHtmlConventions>();
+
+            
         }
     }
 }

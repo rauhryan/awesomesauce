@@ -11,18 +11,7 @@ namespace AwesomeSauce.Handlers
          }
     }
 
-    public class AwesomeCreateHandler<TEntity> where TEntity : AwesomeEntity, new()
-    {
-        public AwesomeCreateModel<TEntity> Execute()
-        {
-            return new AwesomeCreateModel<TEntity>() {Entity = new TEntity()};
-        }
-    }
-
-    public class AwesomeCreateModel<TEntity>
-    {
-        public TEntity Entity { get; set; }
-    }
+   
 
     public class AwesomeEditRequest<T> 
     {

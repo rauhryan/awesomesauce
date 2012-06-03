@@ -107,6 +107,7 @@
     <EmbeddedResource Include="Views\AwesomeEditView.spark">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Views\AwesomeCreateView.spark" />
     <None Include="Views\Blogs.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

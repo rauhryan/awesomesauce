@@ -10,7 +10,7 @@ using FubuMVC.Core.UI.Tags;
 using FubuMVC.Core.View;
 using HtmlTags;
 
-namespace AwesomeSauce.Handlers
+namespace FubuMVC.Core.UI
 {
     public static class AwesomeFubuPageExtensions
     {
@@ -29,7 +29,7 @@ namespace AwesomeSauce.Handlers
                 var elementRequest = new ElementRequest(model, p, sl);
                 var accessRight = page.Get<IFieldAccessService>().RightsFor(elementRequest);
             
-                var line = new FormLineExpression<TEntity>(tags, tags.NewFieldLayout(), elementRequest).Access(accessRight);
+                var line = new FormLineExpression<TEntity>(tags, tags.NewFieldLayout(), elementRequest).Access(accessRight).Editable(true);
 
 
                 result.Append(line.ToString());
