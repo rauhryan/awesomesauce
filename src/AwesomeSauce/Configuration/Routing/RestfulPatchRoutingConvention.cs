@@ -11,7 +11,7 @@ namespace AwesomeSauce.Configuration.Routing
     {
         public bool Matches(ActionCall call, IConfigurationObserver log)
         {
-            return call.HandlerType.Closes(typeof(RestfulCreateHandler<>));
+            return call.HandlerType.Closes(typeof(RestfulPatchHandler<>));
         }
 
         public IRouteDefinition Build(ActionCall call)
