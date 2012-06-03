@@ -14,8 +14,6 @@ namespace AwesomeSauce.Configuration.Views
     {
         public void Configure(ViewBag bag, BehaviorGraph graph)
         {
-            //
-
             FindChainsWithoutViews(graph, bag).Each(b =>
             {
                 var output = b.ActionOutputType();

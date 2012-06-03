@@ -2,6 +2,7 @@
 <html>
   <head></head>
   <body>
+  <h1>Awesome Sauce</h1>
     <use content="view"></use>
   </body>
 </html>
