@@ -12,11 +12,13 @@ namespace AwesomeSauce.Configuration
 
             registry.Actions
                 .FindWith<RestfulCreateHandlerActionSource>()
+                .FindWith<RestfulDeleteHandlerActionSource>()
                 .FindWith<RestfulIndexHandlerActionSource>()
                 .FindWith<RestfulFindHandlerActionSource>();
 
             registry.Routes
                 .UrlPolicy<RestfulCreateRoutingConvention>()
+                .UrlPolicy<RestfulDeleteRoutingConvention>()
                 .UrlPolicy<RestfulIndexRoutingConvention>()
                 .UrlPolicy<RestfulFindRoutingConvention>();
 
