@@ -28,13 +28,14 @@ namespace FubuMVC.Core.UI
         {
             var type = model.GetType();
             var result = new StringBuilder();
-            var tags = page.Get<ITagGenerator<AwesomeEditModel>>();
+            var tags = page.Tags<AwesomeEditModel>();
             var sl = page.Get<IServiceLocator>();
 
             tags.SetProfile(AwesomeConfiguration.TagProfile);
 
             foreach(var prop in getProperties(type))
             {
+
                 var p = new SingleProperty(prop, type);
                 var elementRequest = new ElementRequest(model, p, sl);
                 var accessRight = page.Get<IFieldAccessService>().RightsFor(elementRequest);
@@ -42,6 +43,7 @@ namespace FubuMVC.Core.UI
                 var line = new FormLineExpression<AwesomeEditModel>(tags, tags.NewFieldLayout(), elementRequest)
                     .Access(accessRight)
                     .Editable(true);
+
                 result.Append(line.ToString());
             }
 
