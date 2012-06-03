@@ -15,11 +15,11 @@ namespace AwesomeSauce.Configuration.Actions
     {
         public IEnumerable<ActionCall> FindActions(TypePool types)
         {
-            var awesomeEntities = from entities in types.TypesMatching(AwesomeConfiguration.AwesomeEntities)
+            var awesomeEntities = (from entities in types.TypesMatching(AwesomeConfiguration.AwesomeEntities)
                                   where entities.IsConcrete()
-                                  select entities;
+                                  select entities).ToList();
 
-            var handlers = new[]
+            var openHandlers = new[]
             {
                 typeof (RestfulCreateHandler<>),
                 typeof (RestfulPatchHandler<>),
@@ -31,14 +31,14 @@ namespace AwesomeSauce.Configuration.Actions
 
             foreach (var awesomeEntity in awesomeEntities)
             {
-                foreach(var handler in handlers)
+                foreach(var openHandler in openHandlers)
                 {
-                    var t = handler.MakeGenericType(awesomeEntity);
-                    var m = handler.GetMethod("Execute", BindingFlags.Public | BindingFlags.Instance); //should drive from RestfulHandler
+                    var closedHandler = openHandler.MakeGenericType(awesomeEntity);
+                    var closedMethod = closedHandler.GetMethod("Execute", BindingFlags.Public | BindingFlags.Instance); //should drive from RestfulHandler
 
-                    guard(handler, m);
+                    guard(closedHandler, closedMethod);
 
-                    yield return new ActionCall(t, m);
+                    yield return new ActionCall(closedHandler, closedMethod);
                 }
             }
         }
