@@ -1,4 +1,5 @@
 ﻿using AwesomeSauce.Configuration.Storage;
+using MongoDB.Bson;
 using MongoDB.Driver.Builders;
 
 namespace AwesomeSauce.Handlers
@@ -16,10 +17,10 @@ namespace AwesomeSauce.Handlers
         {
             var collection = _session.GetCollection<TEntity>();
 
-            var query = Query.EQ("_id", request.Id);
+            var query = Query.EQ("_id", new BsonObjectId(request.Id));
             var entity = collection.FindOne(query);
 
-            merge(entity, request.Model);
+            merge(entity, request.Entity);
 
             collection.Save(entity);
 
@@ -41,6 +42,6 @@ namespace AwesomeSauce.Handlers
         IRequestById
     {
         public string Id { get; set; }
-        public T Model { get; set; }
+        public T Entity { get; set; }
     }
 }
