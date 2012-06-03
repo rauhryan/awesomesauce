@@ -10,7 +10,7 @@ namespace AwesomeSauce.Configuration.Html
         {
             Profile(AwesomeConfiguration.TagProfile, tags =>
             {
-                tags.Editors.Always.Modify((request, tag)=>tag.Attr("name", request.ElementId));
+                tags.Editors.Always.Modify((request, tag)=>tag.Attr("name", "Entity" + request.Accessor.FieldName));
 
                 tags.UseLabelAndFieldLayout<AwesomeFieldLayout>();
 

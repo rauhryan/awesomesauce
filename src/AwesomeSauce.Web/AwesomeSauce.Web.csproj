@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AwesomeSauceFubuRegistry.cs" />
+    <Compile Include="Domain\Author.cs" />
     <Compile Include="Domain\AwesomeEntity.cs" />
     <Compile Include="Domain\Blog.cs" />
     <Compile Include="Domain\Derp.cs" />
