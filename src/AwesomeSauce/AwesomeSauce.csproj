@@ -106,6 +106,7 @@
     <Compile Include="Views\AwesomeEditModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".package-manifest" />
     <None Include="packages.config" />
     <EmbeddedResource Include="Views\AwesomeEditView.spark">
       <SubType>Designer</SubType>
