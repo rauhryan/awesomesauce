@@ -94,7 +94,6 @@
     <Compile Include="Configuration\Views\CreateViewPolicy.cs" />
     <Compile Include="Domain\AwesomeEntity.cs" />
     <Compile Include="Handlers\AwesomeFubuPageExtensions.cs" />
-    <Compile Include="Handlers\Class1.cs" />
     <Compile Include="Handlers\AwesomeEditHandler.cs" />
     <Compile Include="Handlers\IRequestById.cs" />
     <Compile Include="Handlers\RestfulCreateHandler.cs" />
