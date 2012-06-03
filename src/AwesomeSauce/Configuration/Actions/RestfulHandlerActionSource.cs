@@ -27,7 +27,8 @@ namespace AwesomeSauce.Configuration.Actions
                 typeof (RestfulDeleteHandler<>),
                 typeof (RestfulFindHandler<>),
                 typeof (RestfulIndexHandler<>),
-                typeof (AwesomeCreateHandler<>)
+                typeof (AwesomeCreateHandler<>),
+                typeof (AwesomeEditHandler<>)
             };
 
             foreach (var awesomeEntity in awesomeEntities)

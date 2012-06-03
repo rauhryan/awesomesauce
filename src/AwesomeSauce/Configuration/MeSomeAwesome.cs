@@ -20,6 +20,7 @@ namespace AwesomeSauce.Configuration
 
             registry.Routes
                 .UrlPolicy<AwesomeCreateRoutingConvention>()
+                .UrlPolicy<AwesomeEditRoutingConvention>()
                 .UrlPolicy<RestfulCreateRoutingConvention>()
                 .UrlPolicy<RestfulDeleteRoutingConvention>()
                 .UrlPolicy<RestfulIndexRoutingConvention>()

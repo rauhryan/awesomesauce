@@ -1,4 +1,4 @@
-﻿using AwesomeSauce.Handlers;
+using AwesomeSauce.Handlers;
 using FubuCore;
 using FubuCore.Reflection;
 using FubuMVC.Core.Diagnostics;
@@ -8,13 +8,13 @@ using FubuMVC.Core.Registration.Routes;
 
 namespace AwesomeSauce.Configuration.Routing
 {
-    public class RestfulPatchRoutingConvention : IUrlPolicy
+    public class AwesomeEditRoutingConvention : IUrlPolicy
     {
         private static Accessor accessor = ReflectionHelper.GetAccessor<IRequestById>(x => x.Id);
 
         public bool Matches(ActionCall call, IConfigurationObserver log)
         {
-            return call.HandlerType.Closes(typeof(RestfulPatchHandler<>));
+            return call.HandlerType.Closes(typeof(AwesomeEditHandler<>));
         }
 
         public IRouteDefinition Build(ActionCall call)
@@ -23,7 +23,8 @@ namespace AwesomeSauce.Configuration.Routing
             var entityType = call.HandlerType.GetGenericArguments()[0];
             def.Append(entityType.Name.ToLowerInvariant());
             def.Input.AddRouteInput(new RouteParameter(accessor), true);
-            def.AddHttpMethodConstraint("POST");
+            def.Append("/edit");
+            def.AddHttpMethodConstraint("GET");
             return def;
         }
     }

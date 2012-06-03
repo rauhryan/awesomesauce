@@ -4,6 +4,8 @@
     <li>
       <a href="${this.Urls.UrlFor(new AwesomeSauce.Handlers.RestfulFindRequest[[AwesomeSauce.Web.Domain.Blog]](){Id = blog.Id.ToString()})}">
         ${ blog.Title }
-      </a></li>
+      </a>
+      <a href="${this.Urls.UrlFor(new AwesomeSauce.Handlers.AwesomeEditRequest[[AwesomeSauce.Web.Domain.Blog]](){Id = blog.Id.ToString()})}">Edit</a>
+    </li>
   </for>
 </ul>

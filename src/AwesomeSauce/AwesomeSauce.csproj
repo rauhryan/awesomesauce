@@ -83,6 +83,7 @@
     <Compile Include="Configuration\Html\AwesomeHtmlConventions.cs" />
     <Compile Include="Configuration\MeSomeAwesome.cs" />
     <Compile Include="Configuration\Routing\AwesomeCreateRoutingConvention.cs" />
+    <Compile Include="Configuration\Routing\AwesomeEditRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulDeleteRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulFindRoutingConvention.cs" />

@@ -21,10 +21,10 @@ namespace FubuMVC.Core.UI
         {
             var editType = typeof (RestfulPatchRequest<>).MakeGenericType(model.GetType());
             var request = Activator.CreateInstance(editType).As<IRequestById>();
-            
+            request.Id = AwesomeConfiguration.GetIdValue(model);
             return isNew
                        ? page.Urls.UrlFor(typeof (RestfulCreateHandler<>).MakeGenericType(model.GetType()))
-                       : "";
+                       : page.Urls.UrlFor(request);
                 //:typeof(RestfulPatchHandler<>).MakeGenericType(model.GetType());
             
         }
