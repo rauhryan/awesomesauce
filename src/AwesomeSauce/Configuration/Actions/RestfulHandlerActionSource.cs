@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using AwesomeSauce.Handlers;
 using FubuCore;
 using FubuCore.Reflection;
@@ -35,11 +36,39 @@ namespace AwesomeSauce.Configuration.Actions
                     var t = handler.MakeGenericType(awesomeEntity);
                     var m = handler.GetMethod("Execute", BindingFlags.Public | BindingFlags.Instance); //should drive from RestfulHandler
 
+                    guard(handler, m);
+
                     yield return new ActionCall(t, m);
                 }
             }
         }
 
+        void guard(Type type, MethodInfo methodInfo)
+        {
+            if(methodInfo == null)
+            {
+                throw new AwesomeException("No 'Execute' method was found on '{0}'".ToFormat(type.Name));
+            }
+        }
+    }
 
+    [Serializable]
+    public class AwesomeException : Exception
+    {
+        public AwesomeException()
+        {
+        }
+
+        public AwesomeException(string message) : base(message)
+        {
+        }
+
+        public AwesomeException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
+        protected AwesomeException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
     }
 }
