@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Configuration\AwesomeSauceFubuRegistry.cs" />
     <Compile Include="Domain\Blog.cs" />
+    <Compile Include="Domain\Derp.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -107,8 +108,8 @@
     <EmbeddedResource Include="Views\AwesomeEditView.spark">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Views\AwesomeCreateView.spark" />
     <None Include="Views\Blogs.spark" />
+    <None Include="Views\CreateDerpView.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

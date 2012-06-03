@@ -1,0 +1,5 @@
+﻿<viewdata model="AwesomeSauce.Handlers.AwesomeCreateModel[[AwesomeSauce.Web.Domain.Derp]]" />
+
+<h2>Custom Derp</h2>
+
+${this.Edit(x => x.Entity.Herp)}
