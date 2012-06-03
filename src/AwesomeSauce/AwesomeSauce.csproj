@@ -77,10 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Actions\RestfulCreateHandlerActionSource.cs" />
+    <Compile Include="Configuration\Actions\RestfulFindHandlerActionSource.cs" />
     <Compile Include="Configuration\Actions\RestfulIndexHandlerActionSource.cs" />
     <Compile Include="Configuration\AwesomeSauce.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulFindRoutingConvention.cs" />
+    <Compile Include="Configuration\Routing\RestfulIndexRoutingConvention.cs" />
     <Compile Include="Configuration\Storage\MongoSession.cs" />
     <Compile Include="Configuration\Storage\MongoSettings.cs" />
     <Compile Include="Configuration\Storage\StorageRegistry.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Handlers\IRequestById.cs" />
     <Compile Include="Handlers\RestfulCreateHandler.cs" />
     <Compile Include="Handlers\RestfulFindHandler.cs" />
+    <Compile Include="Handlers\RestfulIndexHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

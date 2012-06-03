@@ -14,22 +14,22 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulIndexModel<TEntity> Get(RestfulIndexRequest<TEntity> request)
+        public RestfulFindModel<TEntity> Get(RestfulFindRequest<TEntity> request)
         {
             var collection = _session.Session.GetCollection<TEntity>(typeof (TEntity).Name.ToLowerInvariant());
             BsonValue id = new BsonObjectId(request.Id);
             var query = Query.EQ("_id", id);
             TEntity entity = collection.FindOne(query);
-            return new RestfulIndexModel<TEntity>(){Model = entity};
+            return new RestfulFindModel<TEntity>(){Model = entity};
         }
     }
 
-    public class RestfulIndexRequest<T> : IRequestById
+    public class RestfulFindRequest<T> : IRequestById
     {
         public string Id { get; set; }
     }
 
-    public class RestfulIndexModel<T>
+    public class RestfulFindModel<T>
     {
         public T Model { get; set; }
     }
