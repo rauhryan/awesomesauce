@@ -1,7 +1,7 @@
 ﻿<viewdata model="AwesomeSauce.Views.AwesomeEditModel" />
 <h1> Derp ${Model.Entity.GetType().Name}</h1>
 
-<form method="POST" action="${this.CreateUrlFor(Model.Entity)}" >
+<form method="POST" action="${this.AwesomeUrlFor(Model.Entity, Model.IsNew)}" >
   !{this.AwesomeFields(Model.Entity)}
   <input type="submit" value="Save" />
 </form>

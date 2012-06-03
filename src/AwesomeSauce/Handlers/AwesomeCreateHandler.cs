@@ -11,7 +11,7 @@ namespace AwesomeSauce.Handlers
 
         public AwesomeEditModel DaisyChain(AwesomeCreateModel<TEntity> model)
         {
-            return new AwesomeEditModel(){ Entity = model.Entity };
+            return new AwesomeEditModel(){ Entity = model.Entity, IsNew = true};
         }
     }
 

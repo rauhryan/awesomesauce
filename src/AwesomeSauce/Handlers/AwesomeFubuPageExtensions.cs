@@ -17,10 +17,16 @@ namespace FubuMVC.Core.UI
 {
     public static class AwesomeFubuPageExtensions
     {
-        public static string CreateUrlFor(this IFubuPage page, object model)
+        public static string AwesomeUrlFor(this IFubuPage page, object model, bool isNew)
         {
-            var input = typeof(RestfulCreateHandler<>).MakeGenericType(model.GetType());
-            return page.Urls.UrlFor(input);
+            var editType = typeof (RestfulPatchRequest<>).MakeGenericType(model.GetType());
+            var request = Activator.CreateInstance(editType).As<IRequestById>();
+            
+            return isNew
+                       ? page.Urls.UrlFor(typeof (RestfulCreateHandler<>).MakeGenericType(model.GetType()))
+                       : "";
+                //:typeof(RestfulPatchHandler<>).MakeGenericType(model.GetType());
+            
         }
 
         //returning a string is DUMB
