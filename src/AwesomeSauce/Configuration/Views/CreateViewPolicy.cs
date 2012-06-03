@@ -7,7 +7,7 @@ namespace AwesomeSauce.Configuration.Views
     {
         public void Configure(ViewBag bag, BehaviorGraph graph)
         {
-            
+            //
         }
     }
 }

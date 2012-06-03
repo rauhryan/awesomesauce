@@ -8,6 +8,11 @@ namespace AwesomeSauce.Configuration
 {
     public class MeSomeAwesome : FubuPackageRegistry
     {
+        public MeSomeAwesome()
+        {
+            Configure(this);
+        }
+
         public void Configure(FubuRegistry registry)
         {
             registry.Applies.ToThisAssembly();
@@ -16,6 +21,7 @@ namespace AwesomeSauce.Configuration
                 .FindWith<RestfulHandlerActionSource>();
 
             registry.Routes
+                .UrlPolicy<AwesomeCreateRoutingConvention>()
                 .UrlPolicy<RestfulCreateRoutingConvention>()
                 .UrlPolicy<RestfulDeleteRoutingConvention>()
                 .UrlPolicy<RestfulIndexRoutingConvention>()
@@ -23,6 +29,7 @@ namespace AwesomeSauce.Configuration
                 .UrlPolicy<RestfulFindRoutingConvention>();
 
             registry.Output.ToJson.WhenCallMatches(x => x.HandlerType.IsGenericType);
+
 
             registry.Views
                 .TryToAttachWithDefaultConventions()

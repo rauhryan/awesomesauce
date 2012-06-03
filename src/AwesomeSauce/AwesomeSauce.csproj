@@ -82,6 +82,7 @@
     <Compile Include="Configuration\Html\AwesomeFieldLayout.cs" />
     <Compile Include="Configuration\Html\AwesomeHtmlConventions.cs" />
     <Compile Include="Configuration\MeSomeAwesome.cs" />
+    <Compile Include="Configuration\Routing\AwesomeCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulDeleteRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulFindRoutingConvention.cs" />
@@ -107,7 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <EmbeddedResource Include="Views\AwesomeEditView.spark" />
+    <EmbeddedResource Include="Views\AwesomeEditView.spark">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
