@@ -1,2 +1,6 @@
 ﻿<viewdata model="AwesomeSauce.Views.AwesomeEditModel" />
 <h1> Derp ${Model.Entity.GetType().Name}</h1>
+
+<form method="POST" action="${this.CreateUrlFor(Model.Entity)}" >
+  !{this.AwesomeFields(Model.Entity)}
+</form>

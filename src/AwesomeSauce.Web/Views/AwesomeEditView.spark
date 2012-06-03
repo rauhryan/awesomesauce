@@ -1,4 +1,0 @@
-﻿<viewdata model="AwesomeSauce.Views.AwesomeEditModel" />
-<h1> ${Model.Entity.GetType().Name}</h1>
-
-!{this.AwesomeFields(Model.Entity)}

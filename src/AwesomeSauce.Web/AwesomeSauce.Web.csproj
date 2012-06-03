@@ -106,9 +106,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Shared\Application.spark" />
-    <EmbeddedResource Include="Views\AwesomeEditView.spark">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="Views\Blogs.spark" />
     <None Include="Views\CreateDerpView.spark" />
   </ItemGroup>

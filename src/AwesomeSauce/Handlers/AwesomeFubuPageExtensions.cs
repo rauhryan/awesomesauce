@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Text;
 using AwesomeSauce.Configuration;
+using AwesomeSauce.Handlers;
 using AwesomeSauce.Views;
 using FubuCore;
 using FubuCore.Reflection;
@@ -16,6 +17,12 @@ namespace FubuMVC.Core.UI
 {
     public static class AwesomeFubuPageExtensions
     {
+        public static string CreateUrlFor(this IFubuPage page, object model)
+        {
+            var input = typeof (AwesomeCreateHandler<>).MakeGenericType(model.GetType());
+            return page.Urls.UrlFor(input);
+        }
+
         //returning a string is DUMB
         public static string AwesomeFields(this IFubuPage page, object model)
         {
