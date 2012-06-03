@@ -24,8 +24,6 @@ namespace AwesomeSauce.Web.Configuration
             //awesome config - we have defaults for all of this
             //move into the lamda
             AwesomeConfiguration.AwesomeEntities = t => t.CanBeCastTo<AwesomeEntity>();
-
-            Import<MeSomeAwesome>();
         }
     }
 }

@@ -7,7 +7,7 @@ using FubuMVC.Spark;
 
 namespace AwesomeSauce.Configuration
 {
-    public class MeSomeAwesome : FubuPackageRegistry, IFubuRegistryExtension
+    public class MeSomeAwesome : IFubuRegistryExtension
     {
         public void Configure(FubuRegistry registry)
         {

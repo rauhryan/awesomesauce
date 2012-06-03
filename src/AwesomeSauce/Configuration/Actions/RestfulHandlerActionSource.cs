@@ -17,7 +17,8 @@ namespace AwesomeSauce.Configuration.Actions
         {
             var awesomeEntities = (from entities in types.TypesMatching(AwesomeConfiguration.AwesomeEntities)
                                   where entities.IsConcrete()
-                                  select entities).ToList();
+                                  select entities).ToList()
+                                  .Distinct();
 
             var openHandlers = new[]
             {
