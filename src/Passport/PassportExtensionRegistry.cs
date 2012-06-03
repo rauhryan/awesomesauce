@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using FubuMVC.Core;
+using FubuMVC.Core.Behaviors;
 using FubuMVC.Core.Registration.Nodes;
+using System.Linq;
+using FubuMVC.Core.Registration.ObjectGraph;
 
 namespace Passport
 {
@@ -15,19 +19,25 @@ namespace Passport
         {
             registry.Configure(graph =>
             {
-                foreach(var c in graph.Behaviors)
+                graph.Behaviors.Where(PassportConfiguration.RestrictedAction).Each(c =>
                 {
-                    if(PassportConfiguration.RestrictedAction(c))
-                    {
-                        
-                    }
-                }
+                    var x = new Wrapper(typeof (AuthenticationPolicy));
+                    c.Prepend(x);
+                });
             });
         }
     }
 
-    public class RestrictedPolicy
+    public class AuthenticationPolicy : IActionBehavior
     {
-        
+        public void Invoke()
+        {
+            //do authentication shit
+        }
+
+        public void InvokePartial()
+        {
+            //no-op
+        }
     }
 }
