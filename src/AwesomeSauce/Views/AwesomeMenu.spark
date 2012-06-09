@@ -1,0 +1,6 @@
+﻿<viewdata model="AwesomeSauce.Handlers.AwesomeMenuModel"/>
+<for each="var route in Model.Routes">
+	<li>
+	<a href="/${route.Route.Pattern}">${route.Text}</a>
+	</li>
+</for>

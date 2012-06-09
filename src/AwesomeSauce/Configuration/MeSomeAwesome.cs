@@ -3,6 +3,7 @@ using AwesomeSauce.Configuration.Actions;
 using AwesomeSauce.Configuration.Html;
 using AwesomeSauce.Configuration.Routing;
 using AwesomeSauce.Configuration.Views;
+using AwesomeSauce.Handlers;
 using FubuMVC.Core;
 using FubuMVC.Spark;
 
@@ -17,6 +18,7 @@ namespace AwesomeSauce.Configuration
                 .ToThisAssembly();
 
             registry.Actions
+                .IncludeType<AwesomeMenuHandler>()
                 .FindWith<RestfulHandlerActionSource>();
 
             registry.Routes

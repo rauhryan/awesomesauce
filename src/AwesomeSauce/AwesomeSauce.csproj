@@ -99,6 +99,7 @@
     <Compile Include="Handlers\AwesomeCreateHandler.cs" />
     <Compile Include="AwesomeFubuPageExtensions.cs" />
     <Compile Include="Handlers\AwesomeEditHandler.cs" />
+    <Compile Include="Handlers\AwesomeMenuHandler.cs" />
     <Compile Include="Handlers\IRequestById.cs" />
     <Compile Include="Handlers\RestfulCreateHandler.cs" />
     <Compile Include="Handlers\RestfulDeleteHandler.cs" />
@@ -120,6 +121,7 @@
     <None Include="Shared\Application.spark" />
     <None Include="Shared\_global.spark" />
     <None Include="Views\AwesomeIndexView.spark" />
+    <None Include="Views\AwesomeMenu.spark" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\styles\960.css" />

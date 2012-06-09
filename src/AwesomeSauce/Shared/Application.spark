@@ -18,7 +18,7 @@
                         </ul>
                     </li>
                    -->
-                   
+                   !{this.Partial(new AwesomeSauce.Handlers.AwesomeMenuRequest())}
                 </ul>
                 <ul class="nav secondary-nav">
                 </ul>
