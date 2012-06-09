@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Web;
 using AwesomeSauce.Configuration.Storage;
-using AwesomeSauce.Web.Configuration;
+using DemoWeb.Configuration;
 using FubuMVC.Core;
 using FubuMVC.StructureMap;
 using StructureMap;
 
-namespace AwesomeSauce.Web
+namespace DemoWeb
 {
     public class Global : HttpApplication
     {
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            FubuApplication.For<AwesomeSauceFubuRegistry>()
+            FubuApplication.For<DemoWebFubuRegistry>()
                 .StructureMap(() =>
                                   {
                                       ObjectFactory.Initialize(c =>

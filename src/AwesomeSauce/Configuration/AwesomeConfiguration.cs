@@ -1,6 +1,5 @@
 using System;
 using System.Reflection;
-using FubuCore;
 using FubuMVC.Core.UI.Configuration;
 
 namespace AwesomeSauce.Configuration
@@ -17,6 +16,12 @@ namespace AwesomeSauce.Configuration
                 return pi.GetValue(o, null).ToString();
 
             };
+            SetIdValue = (o, value) =>
+            {
+                var pi = o.GetType().GetProperty("Id", BindingFlags.Instance | BindingFlags.Public);
+                pi.SetValue(o, value, null);
+            };
+            IdField = arg => arg.Accessor.Name.Equals("Id");
         }
 
         public static Func<Type, bool> AwesomeEntities { get; set; }
@@ -24,17 +29,9 @@ namespace AwesomeSauce.Configuration
         public static string TagProfile { get; set; }
 
         public static Func<object, string> GetIdValue;
-        
 
-        public static void SetIdValue(object o, object value)
-        {
-            var pi = o.GetType().GetProperty("Id", BindingFlags.Instance | BindingFlags.Public);
-            pi.SetValue(o, value, null);
-        }
+        public static Action<object, object> SetIdValue;
 
-        public static bool IdField(AccessorDef arg)
-        {
-            return arg.Accessor.Name.Equals("Id");
-        }
+        public static Func<AccessorDef, bool> IdField;
     }
 } 

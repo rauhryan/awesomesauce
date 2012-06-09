@@ -1,14 +1,14 @@
 ﻿using AwesomeSauce.Configuration;
-using AwesomeSauce.Web.Domain;
+using DemoWeb.Domain;
 using FubuMVC.Core;
 using FubuMVC.Spark;
 using FubuCore;
 
-namespace AwesomeSauce.Web.Configuration
+namespace DemoWeb.Configuration
 {
-    public class AwesomeSauceFubuRegistry : FubuRegistry
+    public class DemoWebFubuRegistry : FubuRegistry
     {
-        public AwesomeSauceFubuRegistry()
+        public DemoWebFubuRegistry()
         {
             IncludeDiagnostics(true);
 
@@ -23,7 +23,7 @@ namespace AwesomeSauce.Web.Configuration
 
             //awesome config - we have defaults for all of this
             //move into the lamda
-            AwesomeConfiguration.AwesomeEntities = t => t.CanBeCastTo<AwesomeEntity>();
+            AwesomeConfiguration.AwesomeEntities = t => t.CanBeCastTo<MyEntity>();
         }
     }
 }

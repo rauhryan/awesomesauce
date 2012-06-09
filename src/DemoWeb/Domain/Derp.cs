@@ -1,8 +1,8 @@
 ﻿using MongoDB.Bson;
 
-namespace AwesomeSauce.Web.Domain
+namespace DemoWeb.Domain
 {
-    public class Derp : AwesomeEntity
+    public class Derp : MyEntity
     {
         public ObjectId Id { get; set; }
         public string Herp { get; set; }

@@ -1,8 +1,8 @@
 using MongoDB.Bson;
 
-namespace AwesomeSauce.Web.Domain
+namespace DemoWeb.Domain
 {
-    public interface AwesomeEntity
+    public interface MyEntity
     {
         ObjectId Id { get; set; }
     }

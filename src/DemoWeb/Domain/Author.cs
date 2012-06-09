@@ -1,8 +1,8 @@
 ﻿using MongoDB.Bson;
 
-namespace AwesomeSauce.Web.Domain
+namespace DemoWeb.Domain
 {
-    public class Author : AwesomeEntity
+    public class Author : MyEntity
     {
         public ObjectId Id { get; set; }
         public string FirstName { get; set; }
