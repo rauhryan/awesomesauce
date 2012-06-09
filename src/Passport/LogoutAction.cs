@@ -3,10 +3,9 @@ using FubuMVC.Core.Security;
 
 namespace Passport
 {
-    
     public class LogoutAction
     {
-        IAuthenticationContext _context;
+        readonly IAuthenticationContext _context;
 
         public LogoutAction(IAuthenticationContext context)
         {

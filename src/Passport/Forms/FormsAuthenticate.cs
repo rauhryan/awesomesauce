@@ -1,7 +1,8 @@
 using FubuMVC.Core.Continuations;
 using FubuMVC.Core.Urls;
+using Passport.UsernamePassword;
 
-namespace Passport
+namespace Passport.Forms
 {
     public class FormsAuthenticate
     {
@@ -28,11 +29,4 @@ namespace Passport
 
         }
     }
-
-    public class FormsLoginRequest
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
-    }
-
 }

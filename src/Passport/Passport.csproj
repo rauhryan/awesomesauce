@@ -66,17 +66,24 @@
   <ItemGroup>
     <Compile Include="AuthenticationFailurePolicy.cs" />
     <Compile Include="AuthenticationPolicy.cs" />
-    <Compile Include="FormsAuthenticate.cs" />
-    <Compile Include="IUsernamePasswordVerifier.cs" />
+    <Compile Include="Forms\FormsAuthenticate.cs" />
+    <Compile Include="Forms\FormsLoginRequest.cs" />
+    <Compile Include="Forms\FormsLogonAction.cs" />
+    <Compile Include="Forms\FormsUnauthenticatedPolicy.cs" />
     <Compile Include="LogoutAction.cs" />
     <Compile Include="PassportActionSource.cs" />
+    <Compile Include="PassportConfiguration.cs" />
     <Compile Include="PassportExtensionRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\IUsernamePasswordVerifier.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Saml\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

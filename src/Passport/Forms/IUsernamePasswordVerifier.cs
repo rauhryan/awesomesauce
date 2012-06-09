@@ -1,4 +1,4 @@
-namespace Passport
+namespace Passport.UsernamePassword
 {
     public interface IUsernamePasswordVerifier
     {

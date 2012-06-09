@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FubuMVC.Core;
 using FubuMVC.Core.Registration.Nodes;
 using System.Linq;
 
 namespace Passport
 {
-    public static class PassportConfiguration
-    {
-        public static Func<BehaviorChain, bool> RestrictedAction { get; set; }
-
-        public static object LogonRouteInputModel { get; set; }
-
-        public static Type HomeInputModel { get; set; }
-    }
-
     public class PassportExtensionRegistry : IFubuRegistryExtension
     {
         public void Configure(FubuRegistry registry)
