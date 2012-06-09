@@ -19,7 +19,7 @@ namespace AwesomeSauce.Handlers
             var collection = _session.Session.GetCollection<TEntity>(typeof (TEntity).Name.ToLowerInvariant());
             BsonValue id = new BsonObjectId(request.Id);
             var query = Query.EQ("_id", id);
-            TEntity entity = collection.FindOne(query);
+            collection.Remove(query);
             return FubuContinuation.RedirectTo(new RestfulIndexRequest<TEntity>());
            
         }

@@ -23,7 +23,7 @@ namespace AwesomeSauce.Configuration.Routing
             var entityType = call.HandlerType.GetGenericArguments()[0];
             def.Append(entityType.Name.ToLowerInvariant());
             def.Input.AddRouteInput(new RouteParameter(accessor),true);
-            def.AddHttpMethodConstraint("DELETE");
+            def.Append("/delete");
             return def;
         }
     }

@@ -34,6 +34,14 @@ namespace FubuMVC.Core.UI
             request.Id = AwesomeConfiguration.GetIdValue(model);
             return page.Urls.UrlFor(request);
         }
+        public static string DeleteUrlFor(this IFubuPage page, object model)
+        {
+            var editType = typeof(RestfulDeleteRequest<>).MakeGenericType(model.GetType());
+            var request = Activator.CreateInstance(editType).As<IRequestById>();
+            request.Id = AwesomeConfiguration.GetIdValue(model);
+            return page.Urls.UrlFor(request);
+        }
+
         public static string AwesomeDisplay(this IFubuPage page, object model)
         {
             var type = model.GetType();
@@ -58,6 +66,8 @@ namespace FubuMVC.Core.UI
             }
             var editLink = new LinkTag("Edit", page.EditUrlFor(model));
             tr.Append(new HtmlTag("td").Append(editLink));
+            var deleteLink = new LinkTag("Delete", page.DeleteUrlFor(model));
+            tr.Append(new HtmlTag("td").Append(deleteLink));
             result.Append(tr.ToString());
 
             return result.ToString();
@@ -84,7 +94,6 @@ namespace FubuMVC.Core.UI
                 tr.Append(td);
 
             }
-            tr.Append(new HtmlTag("th"));
             tr.Append(new HtmlTag("th"));
             tr.Append(new HtmlTag("th"));
             result.Append(tr.ToString());

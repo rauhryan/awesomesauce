@@ -1,4 +1,4 @@
-﻿<viewdata model="AwesomeSauce.Handlers.RestfulIndexModel[[AwesomeSauce.Web.Domain.Blog]]" />
+﻿<viewdata model="AwesomeSauce.Handlers.RestfulIndexModel[[AwesomeSauce.Web.Domain.Blog]]x" />
 <ul>
   <for each="var blog in Model.Models">
     <li>
