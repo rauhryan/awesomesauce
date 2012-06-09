@@ -1,4 +1,6 @@
-﻿using AwesomeSauce.Configuration.Storage;
+﻿using AwesomeSauce.Configuration;
+using AwesomeSauce.Configuration.Storage;
+using FubuMVC.Core.Continuations;
 using MongoDB.Bson;
 using MongoDB.Driver.Builders;
 
@@ -13,18 +15,19 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulPatchModel<TEntity> Execute(RestfulPatchRequest<TEntity> request)
+        public FubuContinuation Execute(RestfulPatchRequest<TEntity> request)
         {
             var collection = _session.GetCollection<TEntity>();
 
-            var query = Query.EQ("_id", new BsonObjectId(request.Id));
-            var entity = collection.FindOne(query);
+//            var query = Query.EQ("_id", new BsonObjectId(request.Id));
+//            var entity = collection.FindOne(query);
+//
+//            merge(entity, request.Entity);
 
-            merge(entity, request.Entity);
+            AwesomeConfiguration.SetIdValue(request.Entity, new ObjectId(request.Id));
+            collection.Save(request.Entity);
 
-            collection.Save(entity);
-
-            return new RestfulPatchModel<TEntity>(){success = true};
+            return FubuContinuation.RedirectTo(new RestfulIndexRequest<TEntity>());
         }
 
         void merge(TEntity entity, TEntity model)

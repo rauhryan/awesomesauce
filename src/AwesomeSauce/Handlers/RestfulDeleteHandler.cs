@@ -1,4 +1,5 @@
 using AwesomeSauce.Configuration.Storage;
+using FubuMVC.Core.Continuations;
 using MongoDB.Bson;
 using MongoDB.Driver.Builders;
 
@@ -13,13 +14,14 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulDeleteModel<TEntity> Execute(RestfulDeleteRequest<TEntity> request)
+        public FubuContinuation Execute(RestfulDeleteRequest<TEntity> request)
         {
             var collection = _session.Session.GetCollection<TEntity>(typeof (TEntity).Name.ToLowerInvariant());
             BsonValue id = new BsonObjectId(request.Id);
             var query = Query.EQ("_id", id);
             TEntity entity = collection.FindOne(query);
-            return new RestfulDeleteModel<TEntity>() { };
+            return FubuContinuation.RedirectTo(new RestfulIndexRequest<TEntity>());
+           
         }
     }
 

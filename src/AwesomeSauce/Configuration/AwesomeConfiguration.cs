@@ -24,6 +24,12 @@ namespace AwesomeSauce.Configuration
             return pi.GetValue(o, null).ToString();
         }
 
+        public static void SetIdValue(object o, object value)
+        {
+            var pi = o.GetType().GetProperty("Id", BindingFlags.Instance | BindingFlags.Public);
+            pi.SetValue(o, value, null);
+        }
+
         public static bool IdField(AccessorDef arg)
         {
             return arg.Accessor.Name.Equals("Id");
