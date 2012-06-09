@@ -2,6 +2,13 @@
 <h1> Derp ${Model.Entity.GetType().Name}</h1>
 
 <form method="POST" action="${this.AwesomeUrlFor(Model.Entity, Model.IsNew)}" >
-  !{this.AwesomeFields(Model.Entity)}
+  <div class="row">
+
+    <div class="full">
+      
+      !{this.AwesomeFields(Model.Entity)}
+    </div>
+  </div>
+  
   <input type="submit" value="Save" />
 </form>

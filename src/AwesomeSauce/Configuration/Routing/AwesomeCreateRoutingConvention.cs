@@ -22,6 +22,7 @@ namespace AwesomeSauce.Configuration.Routing
             def.Append(entityType.Name.ToLowerInvariant());
             def.Append("/create");
             def.AddHttpMethodConstraint("GET");
+         
             return def;
         }
     }

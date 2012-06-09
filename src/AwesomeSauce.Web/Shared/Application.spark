@@ -2,7 +2,11 @@
 <html>
   <head></head>
   <body>
-  <h1>Awesome Sauce</h1>
+
+  <div id="wrapper" class="container_12">
     <use content="view"></use>
+  </div>
+
+ 
   </body>
 </html>

@@ -1,0 +1,202 @@
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 98%; }
+
+form .alpha {
+  margin-left: 0; }
+form .omega {
+  margin-right: 0; }
+form label > input:focus, form label > select:focus, form label > textarea:focus {
+  outline: 0;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6); }
+form label > input[type="file"]:focus, form label > input[type="checkbox"]:focus, form label > select:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 1px dotted #666666; }
+
+form .row {
+  display: block;
+  width: 102.083%;
+  margin: 0 -1.042%;
+  zoom: 1; }
+  form .row fieldset {
+    overflow: hidden;
+    border: 1px solid #cccccc;
+    padding: 10px 0;
+    border-radius: 4px;
+    margin: 10px 0; }
+    form .row fieldset legend {
+      padding: 0 10px;
+      margin-left: 20px; }
+  form .row label {
+    zoom: 1;
+    display: block;
+    padding: 4px;
+    padding-top: 6px;
+    overflow: hidden; }
+    form .row label:before, form .row label:after {
+      content: "";
+      display: table; }
+    form .row label:after {
+      clear: both; }
+    form .row label > span {
+      font-size: 13px;
+      line-height: 18px;
+      text-align: right;
+      color: #404040;
+      float: left;
+      cursor: pointer; }
+    form .row label > input, form .row label > select, form .row label > textarea {
+      float: left;
+      border: 1px solid #cccccc;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      padding: 4px; }
+  form .row:before, form .row:after {
+    content: "";
+    display: table; }
+  form .row:after {
+    clear: both; }
+  form .row .half {
+    display: inline;
+    float: left;
+    width: 47.917%;
+    margin: 0 1.042%; }
+    form .row .half label > input, form .row .half label > select, form .row .half label > textarea {
+      width: 77%;
+      margin: 0 1%; }
+    form .row .half label > span {
+      width: 20.5%; }
+  form .row .full {
+    display: inline;
+    float: left;
+    width: 97.917%;
+    margin: 0 1.042%; }
+    form .row .full .full {
+      margin: 0; }
+    form .row .full .half.alpha {
+      margin-left: 0; }
+    form .row .full .half.omega {
+      margin-right: 0; }
+    form .row .full .half label > input, form .row .full .half label > select, form .row .full .half label > textarea {
+      width: 77%;
+      margin: 0 1%; }
+    form .row .full .half label span {
+      width: 20.5%; }
+    form .row .full label > input, form .row .full label > select, form .row .full label > textarea {
+      margin: 0 0.5%;
+      width: 88.2%; }
+    form .row .full label span {
+      width: 10%; }
+
+form.stacked .row {
+  display: block;
+  width: 102.083%;
+  margin: 0 -1.042%;
+  zoom: 1; }
+  form.stacked .row label {
+    zoom: 1;
+    display: block;
+    padding-top: 6px;
+    overflow: hidden;
+    margin: 0 5px; }
+    form.stacked .row label:before, form.stacked .row label:after {
+      content: "";
+      display: table; }
+    form.stacked .row label:after {
+      clear: both; }
+    form.stacked .row label > span {
+      font-size: 13px;
+      line-height: 20px;
+      text-align: left;
+      color: #404040;
+      cursor: pointer;
+      float: none;
+      display: block; }
+    form.stacked .row label > input, form.stacked .row label > select, form.stacked .row label > textarea {
+      float: none;
+      border: 1px solid #cccccc;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      padding: 4px; }
+  form.stacked .row:before, form.stacked .row:after {
+    content: "";
+    display: table; }
+  form.stacked .row:after {
+    clear: both; }
+  form.stacked .row .third {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.042%; }
+    form.stacked .row .third label > input, form.stacked .row .third label > select, form.stacked .row .third label > textarea {
+      width: 99%;
+      margin: 0; }
+    form.stacked .row .third label > span {
+      width: auto; }
+  form.stacked .row .half {
+    display: inline;
+    float: left;
+    width: 47.917%;
+    margin: 0 1.042%; }
+    form.stacked .row .half .third {
+      display: inline;
+      float: left;
+      width: 30.55%;
+      margin: 0 2.083%; }
+      form.stacked .row .half .third.alpha {
+        margin-left: 0; }
+      form.stacked .row .half .third.omega {
+        margin-right: 0; }
+    form.stacked .row .half .two-thirds {
+      margin: 0 2.25%; }
+      form.stacked .row .half .two-thirds.alpha {
+        margin-left: 0; }
+      form.stacked .row .half .two-thirds.omega {
+        margin-right: 0; }
+      form.stacked .row .half .two-thirds label > input, form.stacked .row .half .two-thirds label > select, form.stacked .row .half .two-thirds label > textarea {
+        width: 100%;
+        margin: 0; }
+      form.stacked .row .half .two-thirds label > span {
+        width: auto; }
+    form.stacked .row .half label > input, form.stacked .row .half label > select, form.stacked .row .half label > textarea {
+      width: 99%;
+      margin: 0; }
+    form.stacked .row .half label > span {
+      width: auto; }
+  form.stacked .row .two-thirds {
+    display: inline;
+    float: left;
+    width: 64.583%;
+    margin: 0 1.042%; }
+    form.stacked .row .two-thirds label > input, form.stacked .row .two-thirds label > select, form.stacked .row .two-thirds label > textarea {
+      width: 99%;
+      margin: 0; }
+    form.stacked .row .two-thirds label > span {
+      width: auto; }
+  form.stacked .row .full {
+    display: inline;
+    float: left;
+    width: 97.917%;
+    margin: 0 1.042%; }
+    form.stacked .row .full label > input, form.stacked .row .full label > select, form.stacked .row .full label > textarea {
+      margin: 0;
+      width: 98.8%; }
+    form.stacked .row .full label > span {
+      width: auto; }

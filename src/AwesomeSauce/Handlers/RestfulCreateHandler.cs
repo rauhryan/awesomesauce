@@ -1,4 +1,5 @@
 ﻿using AwesomeSauce.Configuration.Storage;
+using FubuMVC.Core.Continuations;
 
 namespace AwesomeSauce.Handlers
 {
@@ -11,12 +12,12 @@ namespace AwesomeSauce.Handlers
             _session = session;
         }
 
-        public RestfulCreateModel<TEntity> Execute(RestfulCreateRequest<TEntity> request)
+        public FubuContinuation Execute(RestfulCreateRequest<TEntity> request)
         {
             var collection = _session.GetCollection<TEntity>();
             collection.Save(request.Entity);
 
-            return new RestfulCreateModel<TEntity>(){success = true};
+            return FubuContinuation.RedirectTo(new RestfulIndexRequest<TEntity>());
         }
          
     }

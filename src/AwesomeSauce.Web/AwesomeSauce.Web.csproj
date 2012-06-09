@@ -91,6 +91,7 @@
     <Compile Include="Domain\AwesomeEntity.cs" />
     <Compile Include="Domain\Blog.cs" />
     <Compile Include="Domain\Derp.cs" />
+    <Compile Include="Domain\Herp.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

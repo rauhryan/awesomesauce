@@ -9,25 +9,25 @@ namespace AwesomeSauce.Configuration.Html
     /// </summary>
     public class AwesomeFieldLayout : ILabelAndFieldLayout
     {
-        private HtmlTag _wrappingDiv;
-        private HtmlTag _label;
+        private HtmlTag _wrappingLabel;
+        private HtmlTag _labelSpan;
         private HtmlTag _inputHolder;
 
         public AwesomeFieldLayout()
         {
             _inputHolder = new HtmlTag("div");
-            _label = new HtmlTag("label");
+            _labelSpan = new HtmlTag("span");
         }
 
         public IEnumerable<HtmlTag> AllTags()
         {
-            yield return _wrappingDiv;
+            yield return _wrappingLabel;
         }
 
         public HtmlTag LabelTag
         {
-            get { return _label; }
-            set { _label = value; }
+            get { return _labelSpan; }
+            set { _labelSpan = value; }
         }
 
         public HtmlTag BodyTag
@@ -38,12 +38,12 @@ namespace AwesomeSauce.Configuration.Html
 
         public override string ToString()
         {
-            _wrappingDiv = new HtmlTag("div").AddClass("clearfix");
-            _wrappingDiv.Append(_label);
-            var d = new HtmlTag("div").AddClass("input");
-            _inputHolder.Children.Each(c => d.Append(c));
-            _wrappingDiv.Append(d);
-            return string.Format("{0}\n", _wrappingDiv);
+            _wrappingLabel = new HtmlTag("label").AddClass("clearfix");
+            _wrappingLabel.Append(_labelSpan);
+
+            _inputHolder.Children.Each(c => _wrappingLabel.Append(c));
+           
+            return string.Format("{0}\n", _wrappingLabel);
         }
     }
 }

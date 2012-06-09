@@ -1,4 +1,5 @@
-﻿using AwesomeSauce.Configuration.Actions;
+﻿using AwesomeSauce.Binding;
+using AwesomeSauce.Configuration.Actions;
 using AwesomeSauce.Configuration.Html;
 using AwesomeSauce.Configuration.Routing;
 using AwesomeSauce.Configuration.Views;
@@ -27,6 +28,9 @@ namespace AwesomeSauce.Configuration
                 .UrlPolicy<RestfulPatchRoutingConvention>()
                 .UrlPolicy<RestfulFindRoutingConvention>();
 
+            registry.Models
+                .BindModelsWith<EntityModelBinder>();
+
             registry.Output.ToJson.WhenCallMatches(x => x.HandlerType.IsGenericType);
 
             registry.UseSpark();
@@ -34,6 +38,7 @@ namespace AwesomeSauce.Configuration
             registry.Views
                 .TryToAttachWithDefaultConventions()
                 .TryToAttachViewsInPackages()
+                .ApplyConvention<IndexViewPolicy>()
                 .ApplyConvention<CreateViewPolicy>();
 
             registry.HtmlConvention<AwesomeHtmlConventions>();

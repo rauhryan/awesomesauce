@@ -26,6 +26,9 @@ namespace AwesomeSauce.Configuration.Html
                 
                 tags.Editors.If(AwesomeConfiguration.IdField)
                     .Modify(tag=>tag.Attr("type","hidden"));
+
+                tags.Labels.Always
+                    .Modify(tag => tag.TagName("span"));
                 //id line
             });
 
