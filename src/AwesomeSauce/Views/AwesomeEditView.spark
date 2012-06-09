@@ -1,7 +1,7 @@
 ﻿<viewdata model="AwesomeSauce.Views.AwesomeEditModel" />
-<h1> Derp ${Model.Entity.GetType().Name}</h1>
+<h1> ${Model.IsNew ? "Create" : "Edit"} ${Model.Entity.GetType().Name}</h1>
 
-<form method="POST" action="${this.AwesomeUrlFor(Model.Entity, Model.IsNew)}" >
+<form method="POST" action="${this.AwesomeUrlFor(Model.Entity, Model.IsNew)}" class="stacked" >
   <div class="row">
 
     <div class="full">
