@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    #{this.Asset("application");} 
+    ${this.WriteAssetTags()}
+</head>
+<body>
+  
+     <div class="menubar topbar">
+        <div class="fill">
+            <div class="container-fluid">
+                <a class="brand" href="/" title="Return to Homepage">Awesome Sauce</a>
+                <ul class="nav">
+                    <!--
+                    <li class="dropdown" data-dropdown="dropdown"><a href="#" class="dropdown-toggle">Create
+                        New</a>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>
+                   -->
+                   
+                </ul>
+                <ul class="nav secondary-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+      
+            
+        
+        <use content="view" />
+    </div>
+</body>
+</html>

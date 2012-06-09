@@ -1,0 +1,15 @@
+﻿<viewdata model="AwesomeSauce.Views.AwesomeIndexModel" />
+<use namespace="System.Collections.Generic" />
+<use namespace="System.Linq" />
+<h1> ${Model.Header} </h1>
+<h3><a href="${Model.CreateUrl}">Create New</a></h3>
+<table if="Model.Models.Any()">
+  <thead>
+    !{this.AwesomeHeaders(Model.Models.First())}
+  </thead>
+  <tbody>
+  <for each="var model in Model.Models">
+	  !{this.AwesomeDisplay(model)}
+  </for>
+  </tbody>
+</table>
