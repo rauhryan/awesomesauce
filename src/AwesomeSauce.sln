@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{540739
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passport", "Passport\Passport.csproj", "{163CE9C5-ABD1-462E-9C95-70A0387A4FFA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Ideas", "Other Ideas", "{526CF80D-4A41-4958-9321-D650A206AE11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{163CE9C5-ABD1-462E-9C95-70A0387A4FFA} = {526CF80D-4A41-4958-9321-D650A206AE11}
 	EndGlobalSection
 EndGlobal

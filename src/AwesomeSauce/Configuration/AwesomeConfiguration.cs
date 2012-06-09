@@ -11,18 +11,20 @@ namespace AwesomeSauce.Configuration
         {
             AwesomeEntities = t => t.Namespace.Contains("Domain");
             TagProfile = "AWESOME";
+            GetIdValue = o =>
+            {
+                var pi = o.GetType().GetProperty("Id", BindingFlags.Instance | BindingFlags.Public);
+                return pi.GetValue(o, null).ToString();
+
+            };
         }
 
         public static Func<Type, bool> AwesomeEntities { get; set; }
 
         public static string TagProfile { get; set; }
 
- 
-        public static string GetIdValue(object o)
-        {
-            var pi = o.GetType().GetProperty("Id", BindingFlags.Instance | BindingFlags.Public);
-            return pi.GetValue(o, null).ToString();
-        }
+        public static Func<object, string> GetIdValue;
+        
 
         public static void SetIdValue(object o, object value)
         {
