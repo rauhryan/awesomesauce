@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using AwesomeSauce.Handlers;
 using FubuCore;
-using FubuCore.Reflection;
 using FubuMVC.Core.Registration;
 using FubuMVC.Core.Registration.Nodes;
 
@@ -15,10 +14,7 @@ namespace AwesomeSauce.Configuration.Actions
     {
         public IEnumerable<ActionCall> FindActions(TypePool types)
         {
-            var awesomeEntities = (from entities in types.TypesMatching(AwesomeConfiguration.AwesomeEntities)
-                                  where entities.IsConcrete()
-                                  select entities).ToList()
-                                  .Distinct();
+            var awesomeEntities = types.EntityTypes();
 
             var openHandlers = new[]
             {

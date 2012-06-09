@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using FubuMVC.Core;
-using FubuMVC.Core.Behaviors;
 using FubuMVC.Core.Registration.Nodes;
 using System.Linq;
-using FubuMVC.Core.Registration.ObjectGraph;
 
 namespace Passport
 {
     public static class PassportConfiguration
     {
         public static Func<BehaviorChain, bool> RestrictedAction { get; set; }
+
+        public static object LogonRouteInputModel { get; set; }
+
+        public static Type HomeInputModel { get; set; }
     }
 
     public class PassportExtensionRegistry : IFubuRegistryExtension
@@ -25,19 +27,6 @@ namespace Passport
                     c.Prepend(x);
                 });
             });
-        }
-    }
-
-    public class AuthenticationPolicy : IActionBehavior
-    {
-        public void Invoke()
-        {
-            //do authentication shit
-        }
-
-        public void InvokePartial()
-        {
-            //no-op
         }
     }
 }

@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationFailurePolicy.cs" />
+    <Compile Include="AuthenticationPolicy.cs" />
+    <Compile Include="FormsAuthenticate.cs" />
+    <Compile Include="IUsernamePasswordVerifier.cs" />
+    <Compile Include="LogoutAction.cs" />
+    <Compile Include="PassportActionSource.cs" />
     <Compile Include="PassportExtensionRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

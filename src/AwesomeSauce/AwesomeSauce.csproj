@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Binding\EntityModelBinder.cs" />
     <Compile Include="Configuration\Actions\RestfulHandlerActionSource.cs" />
+    <Compile Include="Configuration\Actions\TypePoolExtensions.cs" />
     <Compile Include="Configuration\AwesomeConfiguration.cs" />
     <Compile Include="Configuration\Html\AwesomeFieldLayout.cs" />
     <Compile Include="Configuration\Html\AwesomeHtmlConventions.cs" />
