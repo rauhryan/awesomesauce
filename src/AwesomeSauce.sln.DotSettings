@@ -2,5 +2,7 @@
 	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=42A216DFA916C64AA9BFA82E89179EAD/AbsolutePath/@EntryValue">C:\dev\awesomesauce\src\awesome.DotSettings</s:String>
 	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=42A216DFA916C64AA9BFA82E89179EAD/RelativePath/@EntryValue">..\awesome.DotSettings</s:String>
 	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=42A216DFA916C64AA9BFA82E89179EAD/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File42A216DFA916C64AA9BFA82E89179EAD/@KeyIndexDefined">True</s:Boolean>
+	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File42A216DFA916C64AA9BFA82E89179EAD/RelativePriority/@EntryValue">2</s:Double>
 	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File_003A_003AC_003A_005Cdev_005Cawesomesauce_005Csrc_005Cawesome_002EDotSettings/@KeyIndexDefined">True</s:Boolean>
 	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File_003A_003AC_003A_005Cdev_005Cawesomesauce_005Csrc_005Cawesome_002EDotSettings/RelativePriority/@EntryValue">1</s:Double></wpf:ResourceDictionary>

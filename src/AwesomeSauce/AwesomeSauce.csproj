@@ -84,6 +84,7 @@
     <Compile Include="Configuration\Html\AwesomeFieldLayout.cs" />
     <Compile Include="Configuration\Html\AwesomeHtmlConventions.cs" />
     <Compile Include="Configuration\MeSomeAwesome.cs" />
+    <Compile Include="Configuration\Policies\ConnegPolicy.cs" />
     <Compile Include="Configuration\Routing\AwesomeCreateRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\AwesomeEditRoutingConvention.cs" />
     <Compile Include="Configuration\Routing\RestfulCreateRoutingConvention.cs" />
@@ -108,8 +109,10 @@
     <Compile Include="Handlers\RestfulPatchHandler.cs" />
     <Compile Include="MongoExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootContext.cs" />
     <Compile Include="Views\AwesomeEditModel.cs" />
     <Compile Include="Views\AwesomeIndexModel.cs" />
+    <Compile Include="Walker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".package-manifest" />

@@ -87,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\DemoWebFubuRegistry.cs" />
+    <Compile Include="Conventions\Binding\LoanNumberConverterFamily.cs" />
+    <Compile Include="Conventions\HtmlConventions\LoanNumberDisplayBuilder.cs" />
+    <Compile Include="Conventions\HtmlConventions\LoanNumberInputBuilder.cs" />
+    <Compile Include="Conventions\Stringifiers\Strings.cs" />
+    <Compile Include="Domain\LoanNumber.cs" />
+    <Compile Include="Domain\Loan.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -104,7 +110,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <None Include="View\ViewLoan.spark" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

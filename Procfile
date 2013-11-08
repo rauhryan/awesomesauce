@@ -1,0 +1,2 @@
+web: "c:/Program Files (x86)/Common Files/microsoft shared/DevServer/10.0/WebDev.WebServer40.EXE" /port:$PORT /path:"C:/dev/awesomesauce/src/DemoWeb/"
+db: "C:\users\drusellers\Desktop\mongodb-win32-x86_64-2.0.6\bin\mongod.exe"

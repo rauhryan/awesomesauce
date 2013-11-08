@@ -1,0 +1,31 @@
+{ //event
+		"name":"bob",
+		"movements": [
+			{"name":"pushup"}
+		]
+}
+
+/athletes/dru_sellers
+/movements/grace
+/events/thefittestgames2012
+/events/thefittestgames2012-wod-1-movement-grace
+/scores
+{
+	"_id":123,
+	"athlete":"athlete/23",
+	"athlete_name":"Dru Sellers",
+	"movement":"thefittestgames2012-wod-1-movement-grace",
+	"score":{
+		"time":"DNF",
+		"reps":50
+	}
+
+}
+
+public class Getter<T> // t == Event
+public ViewModel Get(Request x)
+{
+	var entity = _session.Get<Event, EventsByName>(x.Name);
+
+
+}

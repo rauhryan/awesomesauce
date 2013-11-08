@@ -1,4 +1,8 @@
-﻿using FubuMVC.Core;
+﻿using AwesomeSauce.Configuration;
+using DemoWeb.Conventions.Binding;
+using FubuCore;
+using FubuMVC.Core;
+using MongoDB.Bson;
 
 namespace DemoWeb.Configuration
 {
@@ -9,7 +13,12 @@ namespace DemoWeb.Configuration
             IncludeDiagnostics(true);
 
             Applies.ToThisAssembly();
-            
+
+            Models
+                .ConvertUsing<LoanNumberConverterFamily>();
+
+            this.Media.ApplyContentNegotiationToActions((call) => true);
+
 //            this.UseSpark();
 //            
 //            Views
@@ -19,7 +28,12 @@ namespace DemoWeb.Configuration
 
             //awesome config - we have defaults for all of this
             //move into the lamda
-//            AwesomeConfiguration.AwesomeEntities = t => t.CanBeCastTo<MyEntity>();
+            AwesomeConfiguration.AwesomeEntities = t => t.CanBeCastTo<IEntity>();
         }
+    }
+
+    public interface IEntity
+    {
+        ObjectId Id { get; }
     }
 }
